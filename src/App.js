@@ -6,9 +6,7 @@ import Auth from './components/Auth/Auth'
 import RecipeCarousel from './components/carousel.component';
 import HomePage from './components/Home/Home';
 import HeaderNav from './components/site/HeaderNav';
-import SavedRecipes from './components/site/SavedRecipes'
 import Footer from './components/site/Footer';
-import RecipeSearch from './components/site/RecipeSearch';
 require("dotenv").config();
 
 function App() {
@@ -43,15 +41,11 @@ function App() {
           <Row>
           <Col>
           {protectedViews()}
-          <RecipeSearch />
           </Col>
             <Col xs="4">
               <br/>
             <RecipeCarousel/>
             <br/>
-            <Row>
-              <SavedRecipes />
-            </Row>
             </Col>
           </Row>     
        <br/>

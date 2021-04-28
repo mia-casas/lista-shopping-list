@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import {Container} from 'reactstrap';
 import ListCreate from './List/ListSetup';
 import ListMap from './List/ListMap';
-import ListEdit from './List/ListEdit'
-import APIURL from '../../helpers/environment'
+import ListEdit from './List/ListEdit';
+import RecipeSearch from '../site/RecipeSearch';
+import APIURL from '../../helpers/environment';
+
 
 const HomePage = (props) => {
     const [lists, setLists] = useState([]);
@@ -46,6 +48,7 @@ const HomePage = (props) => {
             <ListCreate fetchLists={fetchLists} token={props.token} />
             <ListMap lists={lists} fetchLists={fetchLists} token={props.token} editUpdateList={editUpdateList} updateOn={updateOn}/>
             {updateActive ? <ListEdit listToUpdate={listToUpdate} updateOff={updateOff} token={props.token} fetchLists={fetchLists}/> : <></>}
+            <RecipeSearch />
         </div>
     )
 }
