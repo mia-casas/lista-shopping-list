@@ -1,0 +1,101 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Orelega+One&display=swap');
+
+/* body */
+body {
+  padding: 10px;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  
+
+}
+
+/* footer */
+footer {
+  background-color: #BAC600; 
+  color: white;
+  margin-top: 10px;
+  position: absolute;
+  width: 100%;
+}
+
+footer  p {
+  margin-top: 0.8em!important;
+  margin-left: 1.5em;
+}
+
+/* main */
+.main {
+  background-color: white;
+  color: black;
+  height: 100%;
+  min-height: 100%;
+}
+
+.mainDiv {
+  margin: auto;
+  width: 90%;
+  padding: 5px;
+}
+
+.sidebar {
+  display: flex;
+  background-color: #BAC600; 
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Sidebar */
+.sidebar-list-styling{
+  padding-left: 50px;
+  padding-top: 15px;
+  width: 20%;
+  background-color: #6aaf39;
+  color: white;
+}
+
+.sidebar-list a{
+  color: white;
+  padding: 0;
+}
+
+.sidebar-route{ 
+  flex: 1;
+  padding: '00px'; 
+}
+
+/* header */
+.header {
+  margin-top: 0.5em !important;
+  text-align: center;
+  background-color: #BAC600; 
+  font-family: 'Orelega One', cursive;
+  color: white;
+  height: 15em;
+}
+
+.header a {
+  color: white;
+}
+
+.header  p {
+  margin-top: 0.8em!important;
+}
+
+#logo{
+  height: 14em;
+  border-radius: 50%;
+  border: 0.5px solid rgb(219, 214, 214)
+}
+
+/* carousel*/
+#disappear{
+  color: rgba(240, 248, 255, 0);
+}
+
+.slides{
+  border-radius: 10px;
+}
