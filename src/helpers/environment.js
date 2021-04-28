@@ -4,8 +4,8 @@ switch(window.location.hostname){
     case 'localhost' || '127.0.0.1':
         APIURL = 'http://localhost:5005';
         break;
-    case 'git.heroku.com/lista-list.git':
-        APIURL = 'https://git.heroku.com/lista-list.git'
+    case 'lista-shopping-list.herokuapp.com':
+        APIURL = 'https://lista-shopping-list.herokuapp.com'
 }
 
 export default APIURL;
