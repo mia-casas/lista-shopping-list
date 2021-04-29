@@ -5,8 +5,10 @@ import { Col, Row } from 'reactstrap'
 import Auth from './components/Auth/Auth'
 import RecipeCarousel from './components/carousel.component';
 import HomePage from './components/Home/Home';
+import Views from './components/Home/Views'
 import HeaderNav from './components/site/HeaderNav';
 import Footer from './components/site/Footer';
+import {BrowserRouter as Router} from 'react-router-dom';
 require("dotenv").config();
 
 function App() {
@@ -27,7 +29,7 @@ function App() {
     setSessionToken('');
   }
   const protectedViews = () => {
-    return (sessionToken ===localStorage.getItem('token') ? <HomePage token={sessionToken}/>
+    return (sessionToken ===localStorage.getItem('token') ? <Views token={sessionToken}/>
     : <Auth updateToken={updateToken}/>)
   }
 
@@ -40,7 +42,9 @@ function App() {
        <Col>
           <Row>
           <Col>
+          <Router>
           {protectedViews()}
+          </Router>
           </Col>
             <Col xs="4">
               <br/>
