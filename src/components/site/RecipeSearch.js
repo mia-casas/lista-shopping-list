@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {Container, Col, Row, Button, Form, Label, Input } from "reactstrap";
 import APIURL from '../../helpers/environment';
-import {addButton} from '../../Styles.js'
 // import RecipeSearchResults from "./RecipieSearchResults";
 require("dotenv").config();
 
@@ -114,7 +113,7 @@ const saveSearch = (e) => {
            name="mealType"
           /> 
       <br />
-        <Button style={addButton} type="submit">Submit</Button>
+        <Button type="submit">Submit</Button>
              </Form>
         </Col>
       </div>
