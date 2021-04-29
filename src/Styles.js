@@ -32,4 +32,4 @@ const routerDiv = {
     backgroundColor: "#C9BDB5"
 }
 
-export default {button, addButton, yellowButton, routerList, routerDiv}
+export {button, addButton, yellowButton, routerList, routerDiv}
