@@ -134,9 +134,6 @@ const saveSearch = (e) => {
     </Col>
   </Row>
       </div>
-
-    </div>
-
     </Container >
 
   );
