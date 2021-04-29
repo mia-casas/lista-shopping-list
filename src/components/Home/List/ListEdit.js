@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Button, Input, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import APIURL from '../../../helpers/environment';
-import {yellowButton} from '../../../Styles.js'
+import {yellowButton} from '../../../Styles'
 
 const ListEdit = (props) => {
     const [editItem, setEditItem] = useState(props.listToUpdate.item);

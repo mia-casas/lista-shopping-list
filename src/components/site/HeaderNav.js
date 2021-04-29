@@ -7,7 +7,7 @@ import {
         
     } from 'reactstrap';
     import Lista from '../assets/Lista.png'
-    import {button} from "../../Styles.js"
+    import {button} from "../../Styles"
     
     const Header = (props) => {
         return(
