@@ -61,9 +61,10 @@ const onSubmitForm = (event) => {
 // Using array.join to remove commas
 // items in array still have special characters which cause an error in the console log
 
-  let recipe1out = recipe1.join();
-  let recipe2out = recipe2.join();
-  let recipe3out = recipe3.join();
+let recipe1out = recipe1.join();
+let recipe2out = recipe2.join();
+let recipe3out = recipe3.join();
+
 
 // Save Search Results 
 /* Need to figure out a function or if/then scenario to 
@@ -74,7 +75,7 @@ const saveSearch = (e) => {
   e.preventDefault();
   fetch(`${APIURL}/search/create`, {
     method: "POST",
-    body: JSON.stringify({search: {label:title2, ingredients:recipe2out}}),
+    body: JSON.stringify({search: {label:title1, ingredients:recipe1out}}),
     headers: new Headers ({'Content-Type': 'application/json','Authorization': `Bearer ${props.token}`})
     })
   } // There is no notification of success or failure happening
@@ -115,7 +116,7 @@ const saveSearch = (e) => {
     <Col>
       {title1}
       <ul>{recipeList1}</ul>
-      <ul>{recipeList1.length > 0 ? <Button type="submit" onClick={saveSearch}>Select</Button> : null}</ul>
+      <ul>{recipeList1.length > 0 ? <Button type="submit" onClick={saveSearch} >Select</Button> : null}</ul>
     </Col>
     <Col>
       {title2}
