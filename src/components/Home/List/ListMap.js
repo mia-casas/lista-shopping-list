@@ -1,6 +1,7 @@
 import React from 'react';
 import {Table, Row, Button, UncontrolledButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
-import APIURL from '../../../helpers/environment'
+import APIURL from '../../../helpers/environment';
+import {yellowButton} from '../../../Styles.js';
 
 const ListMap = (props) => {
     const deleteList = (list) =>{
@@ -24,7 +25,7 @@ const ListMap = (props) => {
             <td>
                 
                 <UncontrolledButtonDropdown>
-                    <DropdownToggle color="warning">
+                    <DropdownToggle style={yellowButton}>
                         Edit
                     </DropdownToggle>
                     <DropdownMenu>

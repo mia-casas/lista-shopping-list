@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Col, Row, Button } from "reactstrap";
-import APIURL from '../../helpers/environment'
+import {Container, Col, Row, Button, Form, Label, Input } from "reactstrap";
+import APIURL from '../../helpers/environment';
+import {addButton} from '../../Styles.js'
 // import RecipeSearchResults from "./RecipieSearchResults";
 require("dotenv").config();
 
@@ -81,32 +82,33 @@ const saveSearch = (e) => {
 
  //Return
   return (
-    <div className="main">
+    <Container className="main">
       <div className="mainDiv">
-        <h1>Lista Recipe Finder</h1>
+        <h1>Recipe Finder</h1>
+        <p><em>Yields three recipe ideas</em></p>
          {/* SEARCH FORM */}
         <Col>
-        <form onSubmit={(e) => onSubmitForm(e)} >
-         <label for="food">Main Food:</label>
-          <input
+        <Form onSubmit={(e) => onSubmitForm(e)} >
+         <Label for="food">Main Food: </Label>
+          <Input
             type="text" name="food"
-          />
-          <label for="diet">Diet Preference:</label>
-          <input
+          /> 
+          <Label for="diet">Diet Preference: </Label>
+          <Input
             type="text" name="diet"
-          />
-           <label for="cuisineType">Cuisine Type:</label>
-          <input
+          /> 
+           <Label for="cuisineType">Cuisine Type: </Label>
+          <Input
             type="text" name="cuisineType"
-            />
-          <label for="mealType">Meal Type:</label>
-          <input
+            /> 
+          <Label for="mealType">Meal Type: </Label>
+          <Input
             type="text"
            name="mealType"
-          />
-      
-        <button type="submit">Submit</button>
-             </form>
+          /> 
+      <br />
+        <Button style={addButton} type="submit">Submit</Button>
+             </Form>
         </Col>
       </div>
       {/* Search Results */}
@@ -147,9 +149,10 @@ const saveSearch = (e) => {
           <ul>{recipeList3}</ul>
           <ul>{recipe3.length > 0 ? <Button></Button> : "" }</ul>
         </Col>
+        <Row>
       </Row>
 
-    </div>
+    </Container >
   );
 };
 

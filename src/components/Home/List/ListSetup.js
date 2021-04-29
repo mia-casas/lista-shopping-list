@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Container, Table, Form, FormGroup, Button, Label, Input} from 'reactstrap';
 import APIURL from '../../../helpers/environment'
+import {addButton} from '../../../Styles.js'
 
 const ListCreate =(props) => {
     const [item, setItem] = useState('');
@@ -74,7 +75,7 @@ const ListCreate =(props) => {
                         <th>
                         </th>
                     </tr>
-                            <Button type="submit" onClick={handleSubmit} color="success">Add</Button>
+                            <Button style={addButton} type="submit" onClick={handleSubmit} color="success">Add</Button>
                 </tbody>
             </Table>
         </Container>

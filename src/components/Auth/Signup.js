@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
-import APIURL from '../../helpers/environment'
+import APIURL from '../../helpers/environment';
+import {button} from '../../Styles.js'
 
 const Signup = (props) => {
     const [email, setEmail] = useState('');
@@ -44,7 +45,7 @@ const Signup = (props) => {
                     <Label htmlFor="password">New Password (5-16 characters) <br/></Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} type="password"/>
                 </FormGroup>
-                <Button type='submit'>Sign Up</Button>
+                <Button style={button} type='submit'>Sign Up</Button>
             </Form>
         </div>
     )

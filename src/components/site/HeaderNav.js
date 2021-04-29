@@ -1,6 +1,5 @@
 import {
         Navbar, 
-        NavbarBrand, 
         Nav, 
         NavItem, 
         NavLink,
@@ -8,6 +7,7 @@ import {
         
     } from 'reactstrap';
     import Lista from '../assets/Lista.png'
+    import {button} from "../../Styles.js"
     
     const Header = (props) => {
         return(
@@ -18,14 +18,8 @@ import {
     {/*                 <NavbarBrand >Lista Shopping List</NavbarBrand> */}
 
                     <Nav className='ml-auto' navbar>
-                        
-                        <NavItem>
-                            <NavLink href='https://github.com/mia-casas/blue-badge-final-client'>
-                                GitHub
-                            </NavLink>
-                        </NavItem>
                         <NavItem>
-                            <Button onClick={props.clickLogout}>Logout</Button>
+                            <Button style={button} onClick={props.clickLogout}>Log Out</Button>
                         </NavItem>
                         
                     </Nav>
