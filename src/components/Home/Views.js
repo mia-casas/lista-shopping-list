@@ -3,7 +3,7 @@ import HomePage from './Home';
 import RecipeSearch from '../site/RecipeSearch';
 import APIURL from '../../helpers/environment';
 import {Route, Link, Switch} from 'react-router-dom';
-import {routerList, routerDiv} from '../../Styles';
+import {routerList, routerDiv} from '../../Styles.js';
 import FAQ from './FAQ'
 
 const Views = (props) => {
