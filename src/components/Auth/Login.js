@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
-import APIURL from '../../helpers/environment'
+import APIURL from '../../helpers/environment';
+import {button} from '../../Styles.js'
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -11,7 +12,7 @@ const Login = (props) => {
     let handleSubmit = (event) => {
         event.preventDefault();
         if(emailSyntax.test(email)!== true){
-            alert("Valid e-mail address required!")
+            alert("Incorrect email or password")
         } 
         if(password.length < 5 || password.length >16){
             alert("Please enter a password between 5 and 16 characters")
@@ -42,7 +43,7 @@ const Login = (props) => {
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} type="password"/>
                 </FormGroup>
-                <Button type='submit'>Login</Button>
+                <Button style={button} type='submit'>Login</Button>
             </Form>
         </div>
     )
