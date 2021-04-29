@@ -72,9 +72,9 @@ const ListCreate =(props) => {
                             </Form>
                         </th>
                         <th>
-                            <Button type="submit" onClick={handleSubmit} color="success">Add</Button>
                         </th>
                     </tr>
+                            <Button type="submit" onClick={handleSubmit} color="success">Add</Button>
                 </tbody>
             </Table>
         </Container>
