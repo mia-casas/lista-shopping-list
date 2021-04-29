@@ -46,6 +46,8 @@ const HomePage = (props) => {
             <ListCreate fetchLists={fetchLists} token={props.token} />
             <ListMap lists={lists} fetchLists={fetchLists} token={props.token} editUpdateList={editUpdateList} updateOn={updateOn}/>
             {updateActive ? <ListEdit listToUpdate={listToUpdate} updateOff={updateOff} token={props.token} fetchLists={fetchLists}/> : <></>}
+            <RecipeSearch token={props.token}/>
+
         </div>
     )
 }
