@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Container, Table, Form, FormGroup, Button, Label, Input} from 'reactstrap';
 import APIURL from '../../../helpers/environment'
-import ''
 
 const ListCreate =(props) => {
     const [item, setItem] = useState('');
