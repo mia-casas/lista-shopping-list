@@ -1,9 +1,9 @@
+const [recipeList, updateRecipeList] = useState("");
+const [item, setItem] = useState('');
+const [quantity, setQuantity] = useState('');
+const [category, setCategory] = useState('');
 
-const handleSubmit = () => {
-  const [recipeList, updateRecipeList] = useState("");
-  const [item, setItem] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [category, setCategory] = useState('');
+const SavedRecipes = () => {
 
       e.preventDefault();
       fetch(`${APIURL}/list/`, {

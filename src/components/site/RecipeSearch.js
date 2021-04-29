@@ -18,6 +18,7 @@ const RecipeSearch = () => {
     cuisineType: "",
     mealType: "",
   });
+  console.log(props)
 
 const onSubmitForm = (event) => {
   event.preventDefault();
@@ -60,39 +61,58 @@ const onSubmitForm = (event) => {
   const recipeList2 = recipe2.map((recipe2) => <li>{recipe2}</li>);
   const recipeList3 = recipe3.map((recipe3) => <li>{recipe3}</li>);
 
-  //Return
+
+// Using array.join to remove commas
+// items in array still have special characters which cause an error in the console log
+
+  let recipe1out = recipe1.join();
+  let recipe2out = recipe2.join();
+  let recipe3out = recipe3.join();
+
+// Save Search Results 
+/* Need to figure out a function or if/then scenario to 
+allow whichever recipes is slectect to populate the title/ingredients
+*/
+
+const saveSearch = (e) => {
+  e.preventDefault();
+  fetch(`${APIURL}/search/create`, {
+    method: "POST",
+    body: JSON.stringify({search: {label:title2, ingredients:recipe2out}}),
+    headers: new Headers ({'Content-Type': 'application/json','Authorization': `Bearer ${props.token}`})
+    })
+    .catch(err => console.log(err))
+  } // There is no notification of success or failure happening
+
+ //Return
   return (
-    <div className="main">
+    <Container className="main">
       <div className="mainDiv">
-        <h1>Lista Recipe Finder</h1>
+        <h1>Recipe Finder</h1>
+        <p><em>Yields three recipe ideas</em></p>
          {/* SEARCH FORM */}
         <Col>
-        <form onSubmit={(e) => onSubmitForm(e)} >
-     
-          <label for="food">Main Food:</label>
-          <input
+        <Form onSubmit={(e) => onSubmitForm(e)} >
+         <Label for="food">Main Food: </Label>
+          <Input
             type="text" name="food"
-          />
-  
-          <label for="diet">Diet Preference:</label>
-          <input
+          /> 
+          <Label for="diet">Diet Preference: </Label>
+          <Input
             type="text" name="diet"
-          />
-       
-      
-          <label for="cuisineType">Cuisine Type:</label>
-          <input
+          /> 
+           <Label for="cuisineType">Cuisine Type: </Label>
+          <Input
             type="text" name="cuisineType"
-            />
-
-          <label for="mealType">Meal Type:</label>
-          <input
+            /> 
+          <Label for="mealType">Meal Type: </Label>
+          <Input
             type="text"
            name="mealType"
-          />
-      
-        <button type="submit">Submit</button>
-             </form>
+          /> 
+      <br />
+        <Button style={addButton} type="submit">Submit</Button>
+             </Form>
         </Col>
       </div>
       <Row>
@@ -112,8 +132,10 @@ const onSubmitForm = (event) => {
           <ul>{recipeList3}</ul>
           <ul>{recipe3.length > 0 ? <Button></Button> : "" }</ul>
         </Col>
+        <Row>
       </Row>
-    </div>
+
+    </Container >
   );
 };
 
