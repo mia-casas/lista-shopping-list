@@ -65,9 +65,10 @@ const onSubmitForm = (event) => {
 // Using array.join to remove commas
 // items in array still have special characters which cause an error in the console log
 
-  let recipe1out = recipe1.join();
-  let recipe2out = recipe2.join();
-  let recipe3out = recipe3.join();
+let recipe1out = recipe1.join();
+let recipe2out = recipe2.join();
+let recipe3out = recipe3.join();
+
 
 // Save Search Results 
 /* Need to figure out a function or if/then scenario to 
@@ -78,7 +79,7 @@ const saveSearch = (e) => {
   e.preventDefault();
   fetch(`${APIURL}/search/create`, {
     method: "POST",
-    body: JSON.stringify({search: {label:title2, ingredients:recipe2out}}),
+    body: JSON.stringify({search: {label:title1, ingredients:recipe1out}}),
     headers: new Headers ({'Content-Type': 'application/json','Authorization': `Bearer ${props.token}`})
     })
     .catch(err => console.log(err))
@@ -116,26 +117,28 @@ const saveSearch = (e) => {
         </Col>
       </div>
       <Row>
-        <Col>
-          {title1}
-          <ul>{recipeList1}</ul>
-          <ul>{recipe1.length > 0 ? <Button></Button> : "" }</ul>
+    <Col>
+      {title1}
+      <ul>{recipeList1}</ul>
+      <ul>{recipeList1.length > 0 ? <Button type="submit" onClick={saveSearch} >Select</Button> : null}</ul>
+    </Col>
+    <Col>
+      {title2}
+      <ul>{recipeList2}</ul>
+      <ul>{recipeList2.length > 0 ? <Button type="submit" onClick={saveSearch} >Select</Button> : null}</ul>
+    </Col>
+    <Col>
+      {title3}
+      <ul>{recipeList3}</ul>
+      <ul>{recipeList3.length > 0 ? <Button type="submit" onClick={saveSearch}>Select</Button> : null}</ul>
+    </Col>
+  </Row>
+  </Container >
+      </div>
 
-        </Col>
-        <Col>
-          {title2}
-          <ul>{recipeList2}</ul>
-          <ul>{recipe2.length > 0 ? <Button on ></Button> : "" }</ul>
-        </Col>
-        <Col>
-          {title3}
-          <ul>{recipeList3}</ul>
-          <ul>{recipe3.length > 0 ? <Button></Button> : "" }</ul>
-        </Col>
-        <Row>
-      </Row>
+    </div>
 
-    </Container >
+
   );
 };
 
