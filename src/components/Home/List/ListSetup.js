@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Container, Table, Form, FormGroup, Button, Label, Input} from 'reactstrap';
 import APIURL from '../../../helpers/environment'
+import {addButton} from '../../../Styles.js'
 
 const ListCreate =(props) => {
     const [item, setItem] = useState('');
     const [quantity, setQuantity] = useState('');
     const [category, setCategory] = useState('');
+    console.log(props.token.token)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,7 +16,7 @@ const ListCreate =(props) => {
             body: JSON.stringify({list: {item:item, quantity:quantity, category:category}}),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`
+                'Authorization': `Bearer ${props.token.token}`
             })
         }) .then((res) => res.json())
         .then((listData) => {
@@ -72,9 +74,9 @@ const ListCreate =(props) => {
                             </Form>
                         </th>
                         <th>
-                            <Button type="submit" onClick={handleSubmit} color="success">Add</Button>
+                        <Button style={addButton} type="submit" onClick={handleSubmit} color="success">Add</Button>
                         </th>
-                    </tr>
+                      </tr>  
                 </tbody>
             </Table>
         </Container>

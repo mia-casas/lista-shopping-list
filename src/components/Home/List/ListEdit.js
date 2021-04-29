@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Button, Input, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import APIURL from '../../../helpers/environment'
+import APIURL from '../../../helpers/environment';
+import {yellowButton} from '../../../Styles.js'
 
 const ListEdit = (props) => {
     const [editItem, setEditItem] = useState(props.listToUpdate.item);
@@ -14,7 +15,7 @@ const ListEdit = (props) => {
             body: JSON.stringify({list: {item:editItem, quantity:editQty, category:editCat}}),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`
+                'Authorization': `Bearer ${props.token.token}`
             }) 
             }).then((res) => {
                 props.fetchLists();
@@ -38,7 +39,7 @@ const ListEdit = (props) => {
                 </Input>
             </ModalBody>
             <ModalFooter>
-                <Button color="success" type="submit" onClick={listUpdate}>Finish Changes</Button>
+                <Button style={yellowButton} type="submit" onClick={listUpdate}>Finish Changes</Button>
                 <Button color="danger" type="submate" onClick={props.updateOff}>Cancel</Button>
             </ModalFooter>
 

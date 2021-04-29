@@ -27,7 +27,7 @@ footer  p {
 /* main */
 .main {
   background-color: white;
-  color: black;
+  color: #323232;
   height: 100%;
   min-height: 100%;
 }
@@ -47,24 +47,8 @@ footer  p {
 ul {
   list-style-type: none;
 }
-
-/* Sidebar */
-.sidebar-list-styling{
-  padding-left: 50px;
-  padding-top: 15px;
-  width: 20%;
-  background-color: #6aaf39;
-  color: white;
-}
-
-.sidebar-list a{
-  color: white;
-  padding: 0;
-}
-
-.sidebar-route{ 
-  flex: 1;
-  padding: '00px'; 
+a.navLink:hover{
+  color:white !important
 }
 
 /* header */
