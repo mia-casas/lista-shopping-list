@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Row } from "reactstrap";
+import { Col, Row, Button } from "reactstrap";
 require("dotenv").config();
 
 const RecipeSearch = () => {
@@ -42,14 +42,15 @@ const onSubmitForm = (event) => {
         .then((res) => res.json())
         .then((props) => {
           // Recipe 1
-          displayRecipes1(props.hits[8].recipe.ingredientLines);
-          displayTitle1(props.hits[8].recipe.label);
+          console.log(props);
+          displayRecipes1(props.hits[1].recipe.ingredientLines);
+          displayTitle1(props.hits[1].recipe.label);
           // Recipe 2
-          displayRecipes2(props.hits[9].recipe.ingredientLines);
-          displayTitle2(props.hits[9].recipe.label);
+          displayRecipes2(props.hits[2].recipe.ingredientLines);
+          displayTitle2(props.hits[2].recipe.label);
           // Recipe 3
-          displayRecipes3(props.hits[4].recipe.ingredientLines);
-          displayTitle3(props.hits[4].recipe.label);
+          displayRecipes3(props.hits[3].recipe.ingredientLines);
+          displayTitle3(props.hits[3].recipe.label);
         });
     };
 
@@ -98,14 +99,18 @@ const onSubmitForm = (event) => {
         <Col>
           {title1}
           <ul>{recipeList1}</ul>
+          <ul>{recipe1.length > 0 ? <Button></Button> : "" }</ul>
+
         </Col>
         <Col>
           {title2}
           <ul>{recipeList2}</ul>
+          <ul>{recipe2.length > 0 ? <Button></Button> : "" }</ul>
         </Col>
         <Col>
           {title3}
           <ul>{recipeList3}</ul>
+          <ul>{recipe3.length > 0 ? <Button></Button> : "" }</ul>
         </Col>
       </Row>
     </div>
