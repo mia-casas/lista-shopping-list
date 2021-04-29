@@ -23,13 +23,13 @@ export default function RecipeCarousel() {
                 </div>
 
                 <div>
-                <img className="slides" alt="" src={item2}/>
-                <h4>Mango Lime Sorbet</h4>
+                    <img className="slides" alt="" src={item2}/>
+                    <h4>Mango Lime Sorbet</h4>
                 </div>
 
                 <div>
-                <img className="slides" alt="" src={item3}/>
-                <h4>Cheese Strata</h4>
+                    <img className="slides" alt="" src={item3}/>
+                    <h4>Cheese Strata</h4>
                 </div>
 
             </Carousel>
