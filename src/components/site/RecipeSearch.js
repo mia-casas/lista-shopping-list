@@ -42,7 +42,6 @@ const onSubmitForm = (event) => {
         .then((res) => res.json())
         .then((props) => {
           // Recipe 1
-          console.log(props);
           displayRecipes1(props.hits[1].recipe.ingredientLines);
           displayTitle1(props.hits[1].recipe.label);
           // Recipe 2
