@@ -80,8 +80,12 @@ const saveSearch = (e) => {
     body: JSON.stringify({search: {label:title1, ingredients:recipe1out}}),
     headers: new Headers ({'Content-Type': 'application/json','Authorization': `Bearer ${props.token}`})
     })
-    .catch(err => console.log(err))
-  } // There is no notification of success or failure happening
+    .then(
+      (response) => response.json()
+  ).then((json) => {
+      alert("Recipe Saved") 
+  })
+}
 
  //Return
   return (
@@ -135,7 +139,6 @@ const saveSearch = (e) => {
   </Row>
       </div>
 
-    </div>
 
     </Container >
 
