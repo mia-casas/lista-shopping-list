@@ -7,6 +7,7 @@ const ListCreate =(props) => {
     const [item, setItem] = useState('');
     const [quantity, setQuantity] = useState('');
     const [category, setCategory] = useState('');
+    console.log(props.token.token)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,7 +16,7 @@ const ListCreate =(props) => {
             body: JSON.stringify({list: {item:item, quantity:quantity, category:category}}),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`
+                'Authorization': `Bearer ${props.token.token}`
             })
         }) .then((res) => res.json())
         .then((listData) => {
@@ -73,9 +74,9 @@ const ListCreate =(props) => {
                             </Form>
                         </th>
                         <th>
+                        <Button style={addButton} type="submit" onClick={handleSubmit} color="success">Add</Button>
                         </th>
-                    </tr>
-                            <Button style={addButton} type="submit" onClick={handleSubmit} color="success">Add</Button>
+                      </tr>  
                 </tbody>
             </Table>
         </Container>

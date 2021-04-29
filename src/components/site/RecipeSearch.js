@@ -78,6 +78,7 @@ const saveSearch = (e) => {
     body: JSON.stringify({search: {label:title2, ingredients:recipe2out}}),
     headers: new Headers ({'Content-Type': 'application/json','Authorization': `Bearer ${props.token}`})
     })
+    .catch(err => console.log(err))
   } // There is no notification of success or failure happening
 
  //Return

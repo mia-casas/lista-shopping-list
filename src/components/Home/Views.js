@@ -19,13 +19,13 @@ const Views = (props) => {
                 </ul>
             </div>
 
-            <p>Are you going to the grocery store and forgetting to buy specific items? Need a space to plan for your trip? Create a <a><Link to='/HomePage'>shopping List</Link></a> to make your shopping experience effortless.</p>
+            <p>Are you going to the grocery store and forgetting to buy specific items? Need a space to organize your thoughts? Create a <a><Link to='/HomePage'>shopping list</Link></a> to make your shopping experience effortless.</p>
             <br />
             <p>Unsure what to cook for your next meal? Get some ideas from our <a><Link to='/RecipeSearch'>recipe finder</Link></a>.</p>
     
             <Switch>
                 <Route exact path='/RecipeSearch'><RecipeSearch /></Route>
-                <Route exact path='/HomePage'><HomePage /></Route>
+                <Route exact path='/HomePage'><HomePage token={props} /></Route>
                 <Route exact path='/FAQ'><FAQ /></Route>
             </Switch>
             </div>

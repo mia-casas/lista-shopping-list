@@ -9,13 +9,14 @@ const HomePage = (props) => {
     const [lists, setLists] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
     const [listToUpdate, setListToUpdate] = useState({});
+    
 
     const fetchLists = () => {
         fetch(`${APIURL}/list/view`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`
+                'Authorization': `Bearer ${props.token.token}`
             })
         }) .then((res) => res.json()) 
         .then((listData) => {

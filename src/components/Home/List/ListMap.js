@@ -9,7 +9,7 @@ const ListMap = (props) => {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`
+                'Authorization': `Bearer ${props.token.token}`
             })
         })
         .then(() => props.fetchLists())

@@ -15,7 +15,7 @@ const ListEdit = (props) => {
             body: JSON.stringify({list: {item:editItem, quantity:editQty, category:editCat}}),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`
+                'Authorization': `Bearer ${props.token.token}`
             }) 
             }).then((res) => {
                 props.fetchLists();
