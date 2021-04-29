@@ -113,6 +113,7 @@ const saveSearch = (e) => {
       {/* Search Results */}
       <div>
       <Row>
+
     <Col>
       {title1}
       <ul>{recipeList1}</ul>
@@ -130,6 +131,25 @@ const saveSearch = (e) => {
     </Col>
   </Row>
       </div>
+
+        <Col>
+          {title1}
+          <ul>{recipeList1}</ul>
+          <ul>{recipe1.length > 0 ? <Button></Button> : "" }</ul>
+
+        </Col>
+        <Col>
+          {title2}
+          <ul>{recipeList2}</ul>
+          <ul>{recipe2.length > 0 ? <Button></Button> : "" }</ul>
+        </Col>
+        <Col>
+          {title3}
+          <ul>{recipeList3}</ul>
+          <ul>{recipe3.length > 0 ? <Button></Button> : "" }</ul>
+        </Col>
+      </Row>
+
     </div>
   );
 };
