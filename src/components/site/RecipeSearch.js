@@ -18,6 +18,7 @@ const RecipeSearch = (props) => {
     cuisineType: "",
     mealType: "",
   });
+  console.log(props)
 
 const onSubmitForm = (event) => {
   event.preventDefault();

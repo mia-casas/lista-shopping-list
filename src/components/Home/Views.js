@@ -24,7 +24,7 @@ const Views = (props) => {
             <p>Unsure what to cook for your next meal? Get some ideas from our <a><Link to='/RecipeSearch'>recipe finder</Link></a>.</p>
     
             <Switch>
-                <Route exact path='/RecipeSearch'><RecipeSearch /></Route>
+                <Route exact path='/RecipeSearch'><RecipeSearch token={props.token} /></Route>
                 <Route exact path='/HomePage'><HomePage token={props} /></Route>
                 <Route exact path='/FAQ'><FAQ /></Route>
             </Switch>
