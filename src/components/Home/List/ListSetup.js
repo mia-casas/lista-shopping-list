@@ -6,7 +6,7 @@ const ListCreate =(props) => {
     const [item, setItem] = useState('');
     const [quantity, setQuantity] = useState('');
     const [category, setCategory] = useState('');
-    console.log(props.token.token)
+    console.log(props.token)
 
     const handleSubmit = (e) => {
         e.preventDefault();
